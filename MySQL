@@ -1,0 +1,107 @@
+1) Qual o ID do pokemon Lucario?
+
+R: 448
+
+SELECT * FROM `pokedex` WHERE nome = 'Lucario';
+
+
+
+2) Qual a média de altura dos pokemons que são lendarios?
+
+R: 69
+
+SELECT COUNT(altura) FROM `pokedex` WHERE lendario = 1;
+
+
+
+3) Quais pokemons são mais pesados pela média: os dos tipos rock ou do tipo stell?
+
+R: steel 1471.3696
+
+SELECT AVG(peso) FROM `pokedex` WHERE tipo1 = 'steel' OR tipo2 = 'steel'
+
+
+
+4) Traduzir os tipos dos pokemons.
+
+fairy ~ fada
+normal ~ normal
+fighting ~ utador
+flying ~ voador
+poison ~ veneno
+ground ~ terrestre
+rock ~ pedra
+bug ~ inseto
+ghost ~ fantasma
+steel ~ metal
+fire ~ fogo
+water ~ água
+grass ~ grama
+electric ~ eletrico
+psychic ~ psiquico
+ice ~ gelo
+dragon ~ dragão
+dark ~ noturno
+
+
+
+5) Utilizando o site https://serebii.net/pokedex-swsh/ encontre os pokemon com os IDs 80, 122, 149 e insira-os na tabela.
+
+INSERT INTO
+pokedex(pokedex_number,nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario) VALUES (80, 'Slowbro',75,110,1.6,95,30,'water','psycho',78.5,8,0);
+
+INSERT INTO
+pokedex(pokedex_number,nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario) VALUES (122,'Mr. Mime',45,65,1.3,40,90,'psycho','fairy',54.5,8,0);
+
+INSERT INTO
+pokedex(pokedex_number,nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario) VALUES (149,'Dragonite',134,95,2.2,91,80,'dragon','flying',210,8,0);
+
+
+
+6) Qual tipo de pokemon possui mais attack em média.
+
+R: Water 131
+
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'fairy' OR tipo2 = 'fairy';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'normal' OR tipo2 = 'normal';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 ='fighting' OR tipo2 = 'fighting';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'flying' OR tipo2 = 'flying';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'poison' OR tipo2 = 'poison';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'ground' OR tipo2 = 'ground';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'rock' OR tipo2 = 'rock';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'bug' OR tipo2 = 'bug';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'ghost' OR tipo2 = 'ghost';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'steel' OR tipo2 = 'steel';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'fire' OR tipo2 = 'fire';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'water' OR tipo2 = 'water';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'grass' OR tipo2 = 'grass';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'eletric' OR tipo2 = 'eletric';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'psychic' OR tipo2 = 'psychic';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'ice' OR tipo2 = 'ice';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'dragon' OR tipo2 = 'dragon';
+SELECT COUNT(attack) FROM `pokedex` WHERE tipo1 = 'dark' OR tipo2 = 'dark';
+
+
+
+7) Qual geração de pokemons é mais pesada, em média?
+
+R: Geração 5 
+
+SELECT COUNT(peso) from `pokedex` WHERE generation = 1;
+SELECT COUNT(peso) from `pokedex` WHERE generation = 2;
+SELECT COUNT(peso) from `pokedex` WHERE generation = 3;
+SELECT COUNT(peso) from `pokedex` WHERE generation = 4;
+SELECT COUNT(peso) from `pokedex` WHERE generation = 5;
+SELECT COUNT(peso) from `pokedex` WHERE generation = 6;
+SELECT COUNT(peso) from `pokedex` WHERE generation = 7;
+SELECT COUNT(peso) from `pokedex` WHERE generation = 8;
+
+
+
+8) A geração três possui quantos pokemons?
+
+R: 135 pokemons
+
+SELECT COUNT(generation) from `pokedex` WHERE generation = 3;
+SELECT COUNT(*) FROM pokedex WHERE generation = 3;
+SELECT COUNT(nome) FROM `pokedex` WHERE generation = 3;
